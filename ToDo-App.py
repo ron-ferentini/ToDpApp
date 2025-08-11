@@ -1,19 +1,21 @@
+import add_task
 tasks = []
 runApp = True
 
-def add_task():
-    global tasks
-    try:
-        print()
-        newTask = input("Enter a new task: ")
+# The add_task function is commented out to avoid duplication since it is imported from add_task.py
+# def add_task():
+#     global tasks
+#     try:
+#         print()
+#         newTask = input("Enter a new task: ")
 
-        if not newTask.strip():
-            raise ValueError()
-        tasks.append(newTask)
-        print("Task added successfully.")
-        print()
-    except ValueError:
-        print("Invalid input. Task not added.")
+#         if not newTask.strip():
+#             raise ValueError()
+#         tasks.append(newTask)
+#         print("Task added successfully.")
+#         print()
+#     except ValueError:
+#         print("Invalid input. Task not added.")
 
 def remove_task():
     global tasks
