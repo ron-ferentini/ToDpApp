@@ -1,7 +1,7 @@
 tasks = []
 runApp = True
 
-def addTask():
+def add_task():
     global tasks
     try:
         print()
@@ -15,30 +15,14 @@ def addTask():
     except ValueError:
         print("Invalid input. Task not added.")
 
-def viewTasks():
-    global tasks
-    if len(tasks) == 0:
-        print("No tasks available.")
-        print()
-    else:
-        try:
-            print("Current Tasks:")
-            for i, task in enumerate(tasks, 0):
-                print(f"{i + 1} - {task}")
-            print()
-        except TypeError:
-            print("Error: Invalid task list.")
-        except Exception as e:
-            print(f"Error: {e}")
-
-def removeTask():
+def remove_task():
     global tasks
     if len(tasks) == 0:
         print("No tasks to remove.")
         print()
         return
-    viewTasks()
-    
+    view_tasks()
+
     try:
         print()
         task_number = int(input("Enter task number to remove: "))
@@ -56,6 +40,22 @@ def removeTask():
         print("Invalid task number no task removed!")
         print()
         
+def view_tasks():
+    global tasks
+    if len(tasks) == 0:
+        print("No tasks available.")
+        print()
+    else:
+        try:
+            print("Current Tasks:")
+            for i, task in enumerate(tasks, 0):
+                print(f"{i + 1} - {task}")
+            print()
+        except TypeError:
+            print("Error: Invalid task list.")
+        except Exception as e:
+            print(f"Error: {e}")
+
 while runApp:
     
     try:
@@ -67,11 +67,11 @@ while runApp:
         menuSelection = input("What do you want to do? ")
 
         if menuSelection == "1":
-            addTask()
+            add_task()
         elif menuSelection == "2":
-            viewTasks()
+            view_tasks()
         elif menuSelection == "3":
-            removeTask()
+            remove_task()
         elif menuSelection == "4":
             runApp = False
             print("Quitting...")
