@@ -16,7 +16,7 @@ def main():
             menuSelection = input("What do you want to do? ")
 
             if menuSelection == "1":
-                tasksadd_task(tasks)
+                tasks = add_task(tasks)
             elif menuSelection == "2":
                 view_tasks(tasks)
             elif menuSelection == "3":
